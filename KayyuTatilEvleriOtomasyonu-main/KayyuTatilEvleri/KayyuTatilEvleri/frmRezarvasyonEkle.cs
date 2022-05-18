@@ -21,28 +21,45 @@ namespace KayyuTatilEvleri
 
         private void frmRezarvasyonEkle_Load(object sender, EventArgs e)
         {
+            var evler = db.Ev.ToList();
+            cmbEv.DataSource = evler;
+            cmbEv.DisplayMember = "no";
+            cmbEv.ValueMember = "evID";
 
+            var odeme = db.Rezervasyon.ToList();
+            cmbOdemeYontemi.DataSource = odeme;
+            cmbOdemeYontemi.DisplayMember = "odemeYontemi";
+            cmbOdemeYontemi.ValueMember = "odemeTuru";
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
             Rezervasyon r = new Rezervasyon();
-            //r.baslangıcTarihi.Value
+            r.baslangıcTarihi = dateTimeBaslangic.Value;
             r.musteriID = Convert.ToInt32(txtMusteriID.Text);
-            r.odemeTuru = (string)cmbOdemeYontemi.SelectedValue;
+          //  r.odemeTuru = (string)cmbOdemeYontemi.SelectedValue;
             r.tutar = Convert.ToInt32(txtTutar.Text);
-            r.evID = Convert.ToInt32(txtEvID.Text);
+            r.evID = (int)cmbEv.SelectedValue;
             r.aciklama = txtAciklama.Text;
             db.Rezervasyon.Add(r);
-            int sonuc = db.SaveChanges();
+            int deger = db.SaveChanges();
 
-            if (sonuc == 1)
+            if (deger == 1)
                 this.DialogResult = DialogResult.OK;
             else
                 this.DialogResult = DialogResult.Abort;
 
             this.Close();
         }
-            
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cbEv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

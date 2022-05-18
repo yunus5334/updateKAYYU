@@ -28,13 +28,13 @@ namespace KayyuTatilEvleri
                 MessageBox.Show("Hata");
             else
             {
-                txtRezervasyonID.Text = r.rezervasyonID.ToString();
+                
                 dateTimeBaslangic.Value = r.baslangıcTarihi.Value;
                 dateTimeBitis.Value = r.bitisTarihi.Value;
                 txtMusteriID.Text = r.musteriID.ToString();
                 cmbOdemeYontemi.Text = r.odemeTuru ;
                 txtTutar.Text = r.tutar.ToString();
-                txtEvID.Text = r.evID.ToString();
+                //txtEvID.Text = r.evID.ToString();
                 txtAciklama.Text = r.aciklama;
 
 
@@ -44,18 +44,23 @@ namespace KayyuTatilEvleri
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            Rezervasyon r = db.Rezervasyon.Where(x => x.rezervasyonID == RezervasyonID).SingleOrDefault();
-            //r.rezervasyonID =Convert.ToInt32( txtRezervasyonID.Text);
-            //r.baslangıcTarihi. = dateTimeBaslangic.Value;
+            Rezervasyon r = db.Rezervasyon.Where(x => x.rezervasyonID == RezervasyonID).SingleOrDefault();           
+            r.baslangıcTarihi = dateTimeBaslangic.Value;
+            r.bitisTarihi = dateTimeBitis.Value;
             r.musteriID = Convert.ToInt32(txtMusteriID.Text);
             r.odemeTuru =(string)cmbOdemeYontemi.SelectedValue;
             r.tutar = Convert.ToInt32(txtTutar.Text);
-            r.evID = Convert.ToInt32(txtEvID.Text);
+           // r.evID = Convert.ToInt32(txtEvID.Text);
             r.aciklama = txtAciklama.Text;
 
             db.SaveChanges();
             this.DialogResult = DialogResult.OK;
             this.Close();
+            frmRezervasyon frm = new frmRezervasyon();
+            
+            
+
+
 
 
 

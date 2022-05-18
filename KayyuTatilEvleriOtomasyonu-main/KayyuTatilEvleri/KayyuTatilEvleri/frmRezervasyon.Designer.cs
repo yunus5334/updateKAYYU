@@ -33,11 +33,11 @@ namespace KayyuTatilEvleri
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRezervasyon));
             this.GridRezervasyon = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.eKLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dÜZENLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sİLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnKaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridRezervasyon)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -57,32 +57,25 @@ namespace KayyuTatilEvleri
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eKLEToolStripMenuItem,
             this.dÜZENLEToolStripMenuItem,
             this.sİLToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // eKLEToolStripMenuItem
-            // 
-            this.eKLEToolStripMenuItem.Name = "eKLEToolStripMenuItem";
-            this.eKLEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eKLEToolStripMenuItem.Text = "EKLE";
-            this.eKLEToolStripMenuItem.Click += new System.EventHandler(this.eKLEToolStripMenuItem_Click_1);
             // 
             // dÜZENLEToolStripMenuItem
             // 
             this.dÜZENLEToolStripMenuItem.Name = "dÜZENLEToolStripMenuItem";
-            this.dÜZENLEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dÜZENLEToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.dÜZENLEToolStripMenuItem.Text = "DÜZENLE";
             this.dÜZENLEToolStripMenuItem.Click += new System.EventHandler(this.dÜZENLEToolStripMenuItem_Click);
             // 
             // sİLToolStripMenuItem
             // 
             this.sİLToolStripMenuItem.Name = "sİLToolStripMenuItem";
-            this.sİLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sİLToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.sİLToolStripMenuItem.Text = "SİL";
+            this.sİLToolStripMenuItem.Click += new System.EventHandler(this.sİLToolStripMenuItem_Click);
             // 
             // pictureBox5
             // 
@@ -107,12 +100,28 @@ namespace KayyuTatilEvleri
             this.label3.TabIndex = 35;
             this.label3.Text = "REZERVASYON";
             // 
+            // btnKaydet
+            // 
+            this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.btnKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnKaydet.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.ForeColor = System.Drawing.Color.Black;
+            this.btnKaydet.Location = new System.Drawing.Point(30, 11);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(204, 34);
+            this.btnKaydet.TabIndex = 46;
+            this.btnKaydet.Text = "Yeni Rezervasyon";
+            this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
             // frmRezervasyon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(887, 456);
+            this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.GridRezervasyon);
@@ -134,8 +143,8 @@ namespace KayyuTatilEvleri
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem eKLEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dÜZENLEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sİLToolStripMenuItem;
+        private System.Windows.Forms.Button btnKaydet;
     }
 }

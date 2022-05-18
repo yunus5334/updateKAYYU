@@ -31,7 +31,6 @@ namespace KayyuTatilEvleri
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRezarvasyonEkle));
             this.btnEkle = new System.Windows.Forms.Button();
-            this.txtEvID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMusteriID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@ namespace KayyuTatilEvleri
             this.txtTutar = new System.Windows.Forms.TextBox();
             this.dateTimeBitis = new System.Windows.Forms.DateTimePicker();
             this.dateTimeBaslangic = new System.Windows.Forms.DateTimePicker();
+            this.cmbEv = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,21 +56,13 @@ namespace KayyuTatilEvleri
             this.btnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEkle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEkle.ForeColor = System.Drawing.Color.Black;
-            this.btnEkle.Location = new System.Drawing.Point(302, 434);
+            this.btnEkle.Location = new System.Drawing.Point(327, 421);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(88, 34);
+            this.btnEkle.Size = new System.Drawing.Size(127, 34);
             this.btnEkle.TabIndex = 65;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
-            // 
-            // txtEvID
-            // 
-            this.txtEvID.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEvID.Location = new System.Drawing.Point(190, 262);
-            this.txtEvID.Name = "txtEvID";
-            this.txtEvID.Size = new System.Drawing.Size(200, 33);
-            this.txtEvID.TabIndex = 63;
             // 
             // label8
             // 
@@ -78,16 +70,16 @@ namespace KayyuTatilEvleri
             this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.Location = new System.Drawing.Point(114, 265);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 26);
+            this.label8.Size = new System.Drawing.Size(75, 26);
             this.label8.TabIndex = 62;
-            this.label8.Text = "EV ID :";
+            this.label8.Text = "EV No :";
             // 
             // txtMusteriID
             // 
             this.txtMusteriID.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtMusteriID.Location = new System.Drawing.Point(190, 140);
             this.txtMusteriID.Name = "txtMusteriID";
-            this.txtMusteriID.Size = new System.Drawing.Size(200, 33);
+            this.txtMusteriID.Size = new System.Drawing.Size(264, 33);
             this.txtMusteriID.TabIndex = 61;
             // 
             // label7
@@ -96,9 +88,9 @@ namespace KayyuTatilEvleri
             this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.Location = new System.Drawing.Point(70, 140);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 26);
+            this.label7.Size = new System.Drawing.Size(119, 26);
             this.label7.TabIndex = 60;
-            this.label7.Text = "Müşteri ID :";
+            this.label7.Text = "Müşteri No :";
             // 
             // pictureBox5
             // 
@@ -106,11 +98,12 @@ namespace KayyuTatilEvleri
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.ErrorImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(490, 10);
+            this.pictureBox5.Location = new System.Drawing.Point(485, 10);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 35);
             this.pictureBox5.TabIndex = 57;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // cmbOdemeYontemi
             // 
@@ -121,7 +114,7 @@ namespace KayyuTatilEvleri
             "Nakit"});
             this.cmbOdemeYontemi.Location = new System.Drawing.Point(190, 179);
             this.cmbOdemeYontemi.Name = "cmbOdemeYontemi";
-            this.cmbOdemeYontemi.Size = new System.Drawing.Size(200, 34);
+            this.cmbOdemeYontemi.Size = new System.Drawing.Size(264, 34);
             this.cmbOdemeYontemi.TabIndex = 56;
             // 
             // label5
@@ -179,7 +172,7 @@ namespace KayyuTatilEvleri
             this.txtAciklama.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAciklama.Location = new System.Drawing.Point(190, 308);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(200, 96);
+            this.txtAciklama.Size = new System.Drawing.Size(264, 96);
             this.txtAciklama.TabIndex = 50;
             this.txtAciklama.Text = "";
             // 
@@ -188,7 +181,7 @@ namespace KayyuTatilEvleri
             this.txtTutar.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTutar.Location = new System.Drawing.Point(190, 219);
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(200, 33);
+            this.txtTutar.Size = new System.Drawing.Size(264, 33);
             this.txtTutar.TabIndex = 49;
             // 
             // dateTimeBitis
@@ -196,7 +189,7 @@ namespace KayyuTatilEvleri
             this.dateTimeBitis.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateTimeBitis.Location = new System.Drawing.Point(190, 97);
             this.dateTimeBitis.Name = "dateTimeBitis";
-            this.dateTimeBitis.Size = new System.Drawing.Size(200, 33);
+            this.dateTimeBitis.Size = new System.Drawing.Size(264, 33);
             this.dateTimeBitis.TabIndex = 48;
             // 
             // dateTimeBaslangic
@@ -204,17 +197,27 @@ namespace KayyuTatilEvleri
             this.dateTimeBaslangic.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateTimeBaslangic.Location = new System.Drawing.Point(190, 55);
             this.dateTimeBaslangic.Name = "dateTimeBaslangic";
-            this.dateTimeBaslangic.Size = new System.Drawing.Size(200, 33);
+            this.dateTimeBaslangic.Size = new System.Drawing.Size(264, 33);
             this.dateTimeBaslangic.TabIndex = 47;
             this.dateTimeBaslangic.Value = new System.DateTime(2022, 5, 10, 0, 0, 0, 0);
+            // 
+            // cmbEv
+            // 
+            this.cmbEv.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbEv.FormattingEnabled = true;
+            this.cmbEv.Location = new System.Drawing.Point(190, 262);
+            this.cmbEv.Name = "cmbEv";
+            this.cmbEv.Size = new System.Drawing.Size(264, 34);
+            this.cmbEv.TabIndex = 66;
+            this.cmbEv.SelectedIndexChanged += new System.EventHandler(this.cbEv_SelectedIndexChanged);
             // 
             // frmRezarvasyonEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 481);
+            this.ClientSize = new System.Drawing.Size(525, 481);
+            this.Controls.Add(this.cmbEv);
             this.Controls.Add(this.btnEkle);
-            this.Controls.Add(this.txtEvID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMusteriID);
             this.Controls.Add(this.label7);
@@ -242,7 +245,6 @@ namespace KayyuTatilEvleri
         #endregion
 
         private System.Windows.Forms.Button btnEkle;
-        private System.Windows.Forms.TextBox txtEvID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMusteriID;
         private System.Windows.Forms.Label label7;
@@ -257,5 +259,6 @@ namespace KayyuTatilEvleri
         private System.Windows.Forms.TextBox txtTutar;
         private System.Windows.Forms.DateTimePicker dateTimeBitis;
         private System.Windows.Forms.DateTimePicker dateTimeBaslangic;
+        private System.Windows.Forms.ComboBox cmbEv;
     }
 }

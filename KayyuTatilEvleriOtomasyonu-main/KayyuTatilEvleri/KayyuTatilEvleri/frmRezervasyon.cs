@@ -79,5 +79,39 @@ namespace KayyuTatilEvleri
         {
 
         }
+
+        private void sİLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int rsil = (int)GridRezervasyon.SelectedRows[0].Cells[0].Value;
+            Rezervasyon r = db.Rezervasyon.Where(x => x.rezervasyonID == rsil).SingleOrDefault();
+            if (r!=null)
+            {
+                DialogResult sonuc = MessageBox.Show("Silmek istediğinize emin misiniz?", "İşlem Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (sonuc == DialogResult.Yes)
+                {
+                    db.Rezervasyon.Remove(r);
+                    db.SaveChanges();
+                    Doldur();
+                }
+                else
+                    MessageBox.Show("Silme işlemi iptal edildi.");
+            }
+            else
+                MessageBox.Show("İşlem bulunamadı.");
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            frmRezarvasyonEkle frm = new frmRezarvasyonEkle();
+            DialogResult sonuc = frm.ShowDialog();
+            if (sonuc==DialogResult.OK)
+            
+                Doldur();
+            else
+                MessageBox.Show("İşlem iptal edildi");
+
+
+
+        }
     }
 }
